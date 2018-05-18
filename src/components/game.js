@@ -17,6 +17,7 @@ export default class Game extends React.Component {
     };
     this.onSubmitGuess = this.onSubmitGuess.bind(this);
     this.onGuessInput = this.onGuessInput.bind(this);
+    this.onGameRestart = this.onGameRestart.bind(this);
   }
 
   onSubmitGuess(e) {
@@ -35,18 +36,26 @@ export default class Game extends React.Component {
     console.log('onGuessInput **** ran');
     //Get value from text input, convert to number
     const input = +e.target.value;
-    console.log(input);
-    // if()
+    this.setState({
+      guessInput: input
+    });
+  }
 
-    // this.setState({
-    //   guessInput: input
-    // });
+  onGameRestart() {
+    console.log('onGameRestart **** ran');
+    this.setState({
+      feedback: 'Guess between 0 and 100',
+      guessInput: '',
+      guessCount: 0,
+      guessList: []
+    })
+
   }
 
   render() {
     return (
       <div>
-        <Header />
+        <Header onRestart={this.onGameRestart} />
         <GuessSection feedback={this.state.feedback} />
         <GuessForm
           guessInput={this.state.guessInput}
