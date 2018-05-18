@@ -10,7 +10,9 @@ export default function TopNav(props) {
                     <a
                       tabIndex="0"
                       className="what"
-                      href="#what">
+                      href="#what"
+                      aria-label="how to play"
+                    >
                         What?
                     </a>
                 </li>
@@ -19,6 +21,7 @@ export default function TopNav(props) {
                       tabIndex="0"
                       className="new"
                       href="#newgame"
+                      aria-label="start a new game"
                       onClick={props.onRestart}
                     >
                         + New Game

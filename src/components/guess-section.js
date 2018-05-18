@@ -6,7 +6,7 @@ import './guess-section.css';
 
 export default function GuessSection(props) {
     return (
-        <section>
+        <section aria-label="guess section" aria-describedby="feedback">
             <h2 id="feedback">{props.feedback}</h2>
         </section>
     );

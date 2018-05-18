@@ -13,6 +13,7 @@ export default function GuessForm(props) {
               className="text"
               maxLength="3"
               autoComplete="off"
+              aria-labelledby="feedback"
               placeholder="Enter your Guess"
               value={props.guessInput}
               onChange={props.onGuessInput}
